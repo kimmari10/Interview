@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.interview.test.dao.UserDao">
+	<select id="getUserList" resultType="com.interview.test.vo.User">
+		SELECT * FROM USER
+	</select>
+	
+	<select id="getUser" resultType="com.interview.test.vo.User" parameterType="com.interview.test.vo.User">
+		SELECT * FROM USER WHERE EMAIL = #{email}
+	</select>
+  
+  	<insert id="insert"  parameterType="com.interview.test.vo.User">
+  		INSERT INTO USER
+  		(EMAIL, PASSWORD, PHONE)
+  		VALUES(#{email}, #{password}, #{phone})
+  	</insert>
+  	
+</mapper>
