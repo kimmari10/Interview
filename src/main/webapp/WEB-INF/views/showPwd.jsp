@@ -9,6 +9,8 @@
 
 </head>
 <body>
-비밀번호 : ${pwd }
+<c:if test="${pwd == null}">정보를 잘못 입력하셨습니다.</c:if>
+<c:if test="${pwd != null}">비밀번호 : ${pwd }</c:if>
+
 </body>
 </html>

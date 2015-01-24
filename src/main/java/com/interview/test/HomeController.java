@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.interview.test.dao.UserDao;
 import com.interview.test.vo.User;
@@ -18,7 +20,9 @@ import com.interview.test.vo.User;
 /**
  * Handles requests for the application home page.
  */
+
 @Controller
+@SessionAttributes
 public class HomeController {
 	
 	@Autowired
@@ -38,9 +42,15 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/join")
-	public String viewJoin() {
+	public ModelAndView viewJoin() {
+		User user = new User();
 		
-		return "join";
+		//기본값 설정
+//		user.setEmail("이메일");
+//		user.setPassword("비밀번호");
+//		user.setPhone("010-xxxx-xxxx");
+		
+		return new ModelAndView("join", "user", user);
 	}
 	
 	
