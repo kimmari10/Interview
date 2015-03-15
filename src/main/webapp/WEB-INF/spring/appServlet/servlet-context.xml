@@ -45,6 +45,18 @@
 	</beans:bean>
 	
 	
+	<!-- converter -->
+	<!-- <beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+				<beans:bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean> -->
 	
+	
+	
+	<!-- <beans:bean name="userService" class="com.interview.test.service.UserServiceImpl" /> -->
 	
 </beans:beans>

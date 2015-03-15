@@ -9,12 +9,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.interview.test.dao.UserDao;
+import com.interview.test.service.UserService;
 import com.interview.test.vo.User;
 
 /**
@@ -27,6 +30,9 @@ public class HomeController {
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
+//	@Autowired
+//	private UserService userService;
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -63,8 +69,20 @@ public class HomeController {
 	
 	
 	
-	
-	
+/*	@RequestMapping(value="/checkloginid/{loginId}", method=RequestMethod.GET)
+	@ResponseBody
+	public Result checklogin(@PathVariable String email) {
+		Result result = new Result();
+		if(userService.isRegisteredLoginId(email)){
+			result.setDuplicated(true);
+			result.setAvailableId(email + 11);
+		}
+		else {
+			result.setDuplicated(false);
+		}
+		return result;
+			
+	}*/
 	
 	@RequestMapping(value = "/loginProc")
 	public String login(String email, String password, HttpServletRequest req) {

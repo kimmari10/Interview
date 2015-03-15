@@ -141,6 +141,12 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.2.8</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>apache-cxf</artifactId>
+			<version>3.0.3</version>
+			<type>pom</type>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
